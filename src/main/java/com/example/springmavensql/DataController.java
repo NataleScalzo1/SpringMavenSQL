@@ -46,7 +46,7 @@ public class DataController {
 
         Data data = dataRepository.getReferenceById(id);
 
-        return ResponseEntity.ok(data.getName());
+        return ResponseEntity.ok("ID: " + data.getId() + " " + "Name: " + data.getName());
     }
 
     @PostMapping("/post")
@@ -54,6 +54,6 @@ public class DataController {
 
         dataRepository.save(data);
 
-        return ResponseEntity.ok("Data posted successfully");
+        return ResponseEntity.ok("Data posted successfully" + "Data: " + "ID: " + data.getId() + " " + "Name: " + data.getName());
     }
 }
